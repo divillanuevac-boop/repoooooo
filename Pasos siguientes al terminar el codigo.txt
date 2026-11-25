@@ -1,0 +1,21 @@
+Subir archivo a S3:
+
+1: echo "archivo de prueba" > test.txt
+2: aws s3 ls (para ver si esta el bucket y su nombre)
+3: aws s3 cp test.txt s3://nombre-del-bucket/
+4: Revisar si se subio
+
+Después de el paso anterior:
+
+1: Terraform output
+2: Test-NetConnection -ComputerName <ENDPOINT_RDS_SIN_PUERTO> -Port 3306 (Tiene que fallar/timeout si o si)
+3: En aws en la instancia bibloteca a conectarte y tirar mysql -h <ENDPOINT_RDS_SIN_PUERTO> -u admin -p (La contraseña es PasswordPrueba2026)
+
+Y por ultimo en visual nuevamente tirar:
+
+terraform plan -var="ambiente=prod"
+
+Después de eso:
+En visual tirar nuevamente "Terraform output"
+Y copiar el nlb y probarlo en una pagina incognita
+(Si no funciona agregarle http:// al principio)
