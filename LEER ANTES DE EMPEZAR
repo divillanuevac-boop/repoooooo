@@ -1,3 +1,6 @@
+Antes del primer Terraform Init Definir Password
+$env:TF_VAR_db_password="PasswordPrueba2026"
+
 Subir archivo a S3:
 
 1: echo "archivo de prueba" > test.txt
